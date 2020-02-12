@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>e-Kuaför</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/main.css">
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="public/css/bloger.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="text-muted" href="#"><img style="width: 50px;"
+              src="https://img.icons8.com/cotton/64/000000/twitter.png"></a>
+          <a class="text-muted" href="#"><img style="width: 50px;"
+              src="https://img.icons8.com/plasticine/100/000000/facebook-new.png"></a>
+          <a class="text-muted" href="#"><img style="width: 50px;"
+              src="https://img.icons8.com/nolan/64/000000/instagram-new.png"></a>
+        </div>
+       
+        <div class="col-4 text-center">
+          <a class="display-3 font-italic" style="color:rgb(80, 26, 187)" href="#"><img src="public/images/haird.png"
+              alt=""> e-Kuaför </a>
+        </div>
+        <div class="col-4 d-flex  ">
+
+
+          <div class="dropdown">
+            <button class="btn">Giriş yap</button>
+
+
+
+            <div class="dropdown-content" style="width: 300px;">
+              <form class="form-signin" action="/" method="POST">
+
+                <center><img src="public/images/haird.png" alt=""></center> <br>
+                <label for="inputUsernameg" class="sr-only">Kullanici Adi</label>
+                <input type="text" id="inputEmailg" class="form-control" name="username" placeholder="Kullanici Adi"
+                  required autofocus>
+                <label for="inputPassword" class="sr-only">Şifre</label>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Şifre"
+                  required>
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" name="giris" value="btn1" type="submit">Giriş Yap</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+              </form>
+            </div>
+          </div>
+
+          <div class="dropdown">
+           <button class="btn">Kayit ol</button>
+
+
+
+            <div class="dropdown-content" style="width: 300px;">
+             
+              <form class="form-signin" action="/" method="POST">
+
+                <center><img src="public/images/haird.png" alt=""></center> <br>
+                <!-- ad -->
+
+                <div>
+                  <label for="inputName" class="sr-only">Name</label>
+                  <input type="text" id="inputName" class="form-control" name="nameK" placeholder="ad"
+                    required autofocus>
+                </div> 
+
+
+                <!-- email -->
+                <div>
+                  <label for="inputEmail" class="sr-only">Email address</label>
+                  <input type="email"  class="form-control" name="emailK" placeholder="Email address"
+                    required autofocus>
+                </div> 
+                <!-- kullaniciAdi -->
+                <div>
+                <label for="inputEmail" class="sr-only">Kullanici adi</label>
+                <input type="username"  class="form-control" name="usernameK" placeholder="Kullanici Adi"
+                  required autofocus>
+              </div> 
+               <!-- şifre -->
+              <div>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password"  class="form-control" name="passwordK" placeholder="Şifre"
+                  required></div>
+              
+                <button class="btn btn-lg btn-primary btn-block" value="btn2" name="kayitol" type="submit">Kayıt ol</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+
+        <% if(typeof username != 'undefined'){%>
+        <h3><%=username%></h3>
+        <form action="/" method="POST">
+          <button class="btn" style="background-color: blueviolet" name="logOut" value="cikti">çıkış yap</button>
+        </form>
+        <a class="p-2 text-muted" href="/blog">Blogerlar</a>
+        <a class="p-2 text-muted" href="/firsatlar">Fırsatlar</a>
+  
+        <a class="p-2 text-muted" href="/kuaforler">Kuaförler</a>
+        <a class="p-2 text-muted" href="/mekanlar">Mekanlar</a>
+        <%}%>
+
+        <% if(typeof mekanAdi != 'undefined'){%>
+          <h3><%=mekanAdi%></h3>
+          <form action="/" method="POST">
+            <button class="btn" style="background-color: blueviolet;" name="logOutM" value="ciktiM">çıkış yap</button>
+          </form>
+          <a class="p-2 text-muted" href="/blog">Blogerlar</a>
+          <a class="p-2 text-muted" href="/firsatlar">Fırsatlar</a>
+    
+          <a class="p-2 text-muted" href="/kuaforler">Kuaförler</a>
+          <a class="p-2 text-muted" href="/mekanlar">Mekanlar</a>
+          <a class="p-2 text-muted" href="/mekanSahibi">Mekan Sahibi</a>
+          <%}%>
+      
+    
+ 
+    </nav>
+  </div>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" id="image-top" style="background-image: url(public/images/hair3.jpg)">
+    <div class="col-md-6 px-0">
+      <h1 class="display-2 font-italic" style="color:lavender">e-Kuaför</h1>
+      <p class=" font-italic" style="font-size: 30px"> <br><br> Kuaför bulmak artık çok kolay  kuaförünüz bir tık uzağınızda <br><br><br><br></p>
+   
+    </div>
+       <!-- mekansahibi -->
+       <div class="dropdown">
+        <button class="btn" style="background-color: blueviolet">Giriş yap</button>
+
+
+
+        <div class="dropdown-content" style="width: 300px;">
+          <form class="form-signin" action="/" method="POST">
+
+            <center><img src="public/images/haird.png" alt=""></center> <br>
+            <label for="inputUsernameg" class="sr-only">Mekan Adı</label>
+            <input type="text"  class="form-control" name="mekanAdi" placeholder="Mekan Adı"
+              required autofocus>
+            <label for="inputPassword" class="sr-only">Şifre</label>
+            <input type="password" id="inputPassword" name="psw" class="form-control" placeholder="Şifre"
+              required>
+          
+            <button class="btn btn-lg btn-primary btn-block" name="girisM" value="btn3" type="submit">Giriş Yap</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="dropdown">
+       <button class="btn" style="background-color: blueviolet">Mekan Sahibi Kayıt Ol</button>
+
+
+
+        <div class="dropdown-content" style="width: 300px;">
+         
+          <form class="form-signin" action="/" method="POST">
+
+            <center><img src="public/images/haird.png" alt=""></center> <br>
+            <!-- ad -->
+
+            <div>
+              <label for="inputName" class="sr-only">Ad Soyad</label>
+              <input type="text" id="inputName" class="form-control" name="nameM" placeholder="Ad Soyad"
+                required autofocus>
+            </div> 
+
+
+            <!-- email -->
+            <div>
+              <label for="inputEmail" class="sr-only">Email</label>
+              <input type="email"  class="form-control" name="emailM" placeholder="Email"
+                required autofocus>
+            </div> 
+            <!-- Mekan Adi -->
+            <div>
+            <label for="inputEmail" class="sr-only">Mekan Adı</label>
+            <input type="username"  class="form-control" name="mekanAdiM" placeholder="Mekan Adı"
+              required autofocus>
+          </div> 
+           <!-- şifre -->
+          <div>
+            <label for="inputPassword" class="sr-only">Şifre</label>
+            <input type="password"  class="form-control" name="passwordM" placeholder="Şifre"
+              required></div>
+              <div>
+                
+                  <!-- <a   name="fotoY" ></a> -->
+            <button class="btn btn-lg btn-primary btn-block" value="btn4" name="kayitolM" type="submit">Kayıt ol</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mekansahibi -->
+  </div>
+
+  <h1>Favorilerimiz</h1>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">A</strong>
+         
+          <div class="mb-1 text-muted">---saatleri arası açık</div>
+          <p class="card-text mb-auto">konumu</p>
+          <a href="#" class="stretched-link">daha fazlası..</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+                <img style="width: 350px;height: 300px;padding-top: 5%;" src="public/images/hair2.jpg" alt="resim" />       </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">A</strong>
+               
+                <div class="mb-1 text-muted">---saatleri arası açık</div>
+                <p class="card-text mb-auto">konumu</p>
+                <a href="#" class="stretched-link">daha fazlası..</a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                      <img style="width: 350px;height: 300px;padding-top: 5%;" src="public/images/hair2.jpg" alt="resim" />       </div>
+            </div>
+          </div>
+  </div>
+</div>
+
+
+
+<footer class="blog-footer">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<head>
+    <link rel="stylesheet" href="/public/css/main2.css">
+    
+</head>
+
+<body style="background-image: url(public/images/backg.jpg)">
+
+    <div class="topnav">
+        <a href="/"> <img src="public/images/haird.png" alt="" style="height: 35px;">Ana Sayfa</a>
+        <a href="/"> <img src="public/images/haird.png" alt="" style="height: 35px;">Mekan adi</a>
+        
+
+
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input style="width: 500px;height: 45px;" type="text" placeholder="Search.." name="search">
+                <button type="submit"><img
+                        src="https://img.icons8.com/windows/32/000000/google-web-search.png"></button>
+            </form>
+        </div>
+    </div>
+
+   <br>
+   <br>
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay" style="background-color: gray">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <!-- map -->
+                <div style="display: none">
+                        <input id="pac-input"
+                               class="controls"
+                               type="text"
+                               placeholder="Enter a location">
+                    </div>
+                    <div id="map"></div>
+                    <div id="infowindow-content">
+                        <span id="place-name" class="title"></span><br>
+                        <strong>Place ID:</strong> <span id="place-id"></span><br>
+                        <span id="place-address"></span>
+                    </div>
+              
+              </div>
+              
+              <!-- Use any element to open/show the overlay navigation menu -->
+              <span onclick="openNav()"><h3 style="background-image:url(images/colors.jpg) ;color: white">Konum bulmak için tıkla</h3> </span>
+               
+ <br><br>
+<h3 style="color: white;">Mekanı Puanla:<img src="beyaz.png" alt="" id="beyaz1" onclick="this.innerHTML=pro(0)">
+    <img src="public/images/beyaz.png" alt="" id="beyaz2" onclick="this.innerHTML=pro(1)">
+    <img src="public/images/beyaz.png" alt="" id="beyaz3" onclick="this.innerHTML=pro(2)">
+    <img src="public/images/beyaz.png" alt="" id="beyaz4" onclick="this.innerHTML=pro(3)">
+    <img src="public/images/beyaz.png" alt="" id="beyaz5" onclick="this.innerHTML=pro(4)"></h3>
+
+    <div class="main">
+
+
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Hepsi</button>
+            <button class="btn" onclick="filterSelection('nature')"> Saç modelleri</button>
+            <button class="btn" onclick="filterSelection('cars')"> Renkler</button>
+
+        </div>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column nature">
+                <div class="content">
+
+                    <div class="container" style="width: 100%">
+                        <div class="mySlides">
+                            <div class="numbertext" >1 / 6</div>
+                            <img src="public/images/hair.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 6</div>
+                            <img src="public/images/hair2.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 6</div>
+                            <img src="public/images/hair3.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 6</div>
+                            <img src="public/images/hair2.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 6</div>
+                            <img src="public/images/hair.jpg" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 6</div>
+                            <img src="public/images/hair3.jpg" style="width:100%">
+
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <div class="row">
+                            <div class="column">
+                                <img class="demo cursor" src="public/images/hair.jpg" style="width:10%" onclick="currentSlide(1)"
+                                    alt="">
+                                <img class="demo cursor" src="public/images/hair2.jpg" style="width:10%" onclick="currentSlide(2)"
+                                    alt="">
+                                <img class="demo cursor" src="public/images/hair3.jpg" style="width:10%" onclick="currentSlide(3)"
+                                    alt="">
+                                <img class="demo cursor" src="public/images/hair2.jpg" style="width:10%" onclick="currentSlide(4)"
+                                    alt="">
+                                <img class="demo cursor" src="public/images/hair.jpg" style="width:10%" onclick="currentSlide(5)"
+                                    alt="">
+                                <img class="demo cursor" src="public/images/hair3.jpg" style="width:10%" onclick="currentSlide(6)"
+                                    alt="">
+
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+</div>
+                        <div class="column cars" style="width: 40%">
+                            <div class="content">
+                                <img src="public/images/renkler.jpg" alt="Car" style="width:100%">
+                                <img src="public/images/renkler.jpg" alt="Car" style="width:100%">
+                              
+                            </div>
+                        </div>
+
+
+
+                       
+                    
+
+                    <script>
+                        filterSelection("all")
+                        function filterSelection(c) {
+                            var x, i;
+                            x = document.getElementsByClassName("column");
+                            if (c == "all") c = "";
+                            for (i = 0; i < x.length; i++) {
+                                w3RemoveClass(x[i], "show");
+                                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                            }
+                        }
+
+                        function w3AddClass(element, name) {
+                            var i, arr1, arr2;
+                            arr1 = element.className.split(" ");
+                            arr2 = name.split(" ");
+                            for (i = 0; i < arr2.length; i++) {
+                                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+                            }
+                        }
+
+                        function w3RemoveClass(element, name) {
+                            var i, arr1, arr2;
+                            arr1 = element.className.split(" ");
+                            arr2 = name.split(" ");
+                            for (i = 0; i < arr2.length; i++) {
+                                while (arr1.indexOf(arr2[i]) > -1) {
+                                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                                }
+                            }
+                            element.className = arr1.join(" ");
+                        }
+
+
+                        // Add active class to the current button (highlight it)
+                        var btnContainer = document.getElementById("myBtnContainer");
+                        var btns = btnContainer.getElementsByClassName("btn");
+                        for (var i = 0; i < btns.length; i++) {
+                            btns[i].addEventListener("click", function () {
+                                var current = document.getElementsByClassName("active");
+                                current[0].className = current[0].className.replace(" active", "");
+                                this.className += " active";
+                            });
+                        }
+                    </script>
+
+
+
+                    <script src="kuaf.js"></script>
+                    <script>
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        function plusSlides(n) {
+                            showSlides(slideIndex += n);
+                        }
+
+                        function currentSlide(n) {
+                            showSlides(slideIndex = n);
+                        }
+
+                        function showSlides(n) {
+                            var i;
+                            var slides = document.getElementsByClassName("mySlides");
+                            var dots = document.getElementsByClassName("demo");
+                            var captionText = document.getElementById("caption");
+                            if (n > slides.length) { slideIndex = 1 }
+                            if (n < 1) { slideIndex = slides.length }
+                            for (i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";
+                            }
+                            for (i = 0; i < dots.length; i++) {
+                                dots[i].className = dots[i].className.replace(" active", "");
+                            }
+                            slides[slideIndex - 1].style.display = "block";
+                            dots[slideIndex - 1].className += " active";
+                            captionText.innerHTML = dots[slideIndex - 1].alt;
+                        }
+                    </script>
+
+<script>
+    /* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<!-- map -->
+
+<script>
+    
+
+        function initMap() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 41.674965, lng: 26.583481},
+            zoom: 15
+          });
+  
+          var input = document.getElementById('pac-input');
+  
+          var autocomplete = new google.maps.places.Autocomplete(input);
+          autocomplete.bindTo('bounds', map);
+  
+          // Specify just the place data fields that you need.
+          autocomplete.setFields(['place_id', 'geometry', 'name']);
+  
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  
+          var infowindow = new google.maps.InfoWindow();
+          var infowindowContent = document.getElementById('infowindow-content');
+          infowindow.setContent(infowindowContent);
+  
+          var marker = new google.maps.Marker({map: map});
+  
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+  
+          autocomplete.addListener('place_changed', function() {
+            infowindow.close();
+  
+            var place = autocomplete.getPlace();
+  
+            if (!place.geometry) {
+              return;
+            }
+  
+            if (place.geometry.viewport) {
+              map.fitBounds(place.geometry.viewport);
+            } else {
+              map.setCenter(place.geometry.location);
+              map.setZoom(17);
+            }
+  
+            // Set the position of the marker using the place ID and location.
+            marker.setPlace({
+              placeId: place.place_id,
+              location: place.geometry.location
+            });
+  
+            marker.setVisible(true);
+  
+            infowindowContent.children['place-name'].textContent = place.name;
+            infowindowContent.children['place-id'].textContent = place.place_id;
+            infowindowContent.children['place-address'].textContent =
+                place.formatted_address;
+            infowindow.open(map, marker);
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCaZXisdFj14XaFOvmMxCTeA9ibW-KAsQ&libraries=places&callback=initMap"
+          async defer></script>
+
+
+</body>
+
+</html>
